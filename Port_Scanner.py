@@ -1,11 +1,15 @@
+'''
+This is a tutorial i did to learn the threading, socket and Queue modules of python. This threading
+layout can be used to apply to different uses, not just scanning ports.
+'''
 import socket
 import threading
 from queue import Queue
 
 print_lock = threading.Lock()
-target = "www.pythonprogramming.net"
+target = "www.pythonprogramming.net"			#Target IP
 
-def portscan(port):
+def portscan(port):								#Port Scanning function. Replace this to thread something different.
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	try:
 		con = s.connect((target,port))
